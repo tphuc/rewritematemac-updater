@@ -1,0 +1,25 @@
+<rss version="2.0"
+     xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle">
+
+<channel>
+  <title>RewriteMate Updates</title>
+
+  <item>
+    <title>Version 1.0.0</title>
+    <sparkle:version>100</sparkle:version>
+    <sparkle:shortVersionString>1.0.0</sparkle:shortVersionString>
+
+    <enclosure
+      url="https://github.com/me/myapp/releases/download/v1.4.0/MyApp-1.4.0.zip"
+      length="48219321"
+      type="application/octet-stream"
+      sparkle:edSignature="BASE64_SIGNATURE"
+    />
+
+    <description><![CDATA[
+      - Improved performance
+      - Bug fixes
+    ]]></description>
+  </item>
+</channel>
+</rss>
