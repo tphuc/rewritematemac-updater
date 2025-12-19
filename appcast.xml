@@ -5,15 +5,15 @@
   <title>RewriteMate Updates</title>
 
   <item>
-    <title>Version 1.0.0</title>
-    <sparkle:version>100</sparkle:version>
-    <sparkle:shortVersionString>1.0.0</sparkle:shortVersionString>
+    <title>Version 1.0.1</title>
+    <sparkle:version>101</sparkle:version>
+    <sparkle:shortVersionString>1.0.1</sparkle:shortVersionString>
 
     <enclosure
-      url="https://github.com/me/myapp/releases/download/v1.4.0/MyApp-1.4.0.zip"
-      length="48219321"
+      url="https://github.com/tphuc/rewritematemac-updater/releases/download/v1.0.1/RewriteMateMac.zip"
+      length="10616335"
       type="application/octet-stream"
-      sparkle:edSignature="BASE64_SIGNATURE"
+      sparkle:edSignature="Fh1iPUJuk7pP3zPTJF/1nUOvkwiCYx965YhgUrLc9b71DMAeNSzAsbAemlnY7us7l/lE7ehyjzK8Mn78bES8Cg=="
     />
 
     <description><![CDATA[
