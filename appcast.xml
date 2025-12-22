@@ -39,5 +39,23 @@
       - Bug fixes
     ]]></description>
   </item>
+
+  <item>
+    <title>Version 1.0.2</title>
+    <sparkle:version>102</sparkle:version>
+    <sparkle:shortVersionString>1.0.2</sparkle:shortVersionString>
+
+    <enclosure
+      url="https://github.com/tphuc/rewritematemac-updater/releases/download/v1.0.2/RewriteMateMac.zip"
+      length="10774456"
+      type="application/octet-stream"
+      sparkle:edSignature="WpIsoekYQtM9fqIWvbq3t2z3BsmAWlyJpCtwXsNIRZRWCd4FH/OMPbum0CrUGjpHIo8d8Zz9LRBmjcasyuJ9DQ=="
+    />
+
+    <description><![CDATA[
+      - Improvements
+      - Bug fixes
+    ]]></description>
+  </item>
 </channel>
 </rss>
