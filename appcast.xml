@@ -75,5 +75,23 @@
       - Bug fixes
     ]]></description>
   </item>
+
+  <item>
+    <title>Version 1.0.3</title>
+    <sparkle:version>103</sparkle:version>
+    <sparkle:shortVersionString>1.0.3</sparkle:shortVersionString>
+
+    <enclosure
+      url="https://github.com/tphuc/rewritematemac-updater/releases/download/v1.0.3/RewriteMateMac.dmg"
+      length="10999088"
+      type="application/octet-stream"
+      sparkle:edSignature="lFORjrLxGmtkfi0WLCarhSqxm5xc1IcKF8tE3j3Y3niCyVtrAmPqL3YQB/s1u8/OuOE8Byq5l98OqdvBlxHADw=="
+    />
+
+    <description><![CDATA[
+      - Improvements
+      - Bug fixes
+    ]]></description>
+  </item>
 </channel>
 </rss>
