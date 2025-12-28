@@ -75,5 +75,23 @@
       - Bug fixes
     ]]></description>
   </item>
+
+  <item>
+    <title>Version 1.0.4</title>
+    <sparkle:version>104</sparkle:version>
+    <sparkle:shortVersionString>1.0.4</sparkle:shortVersionString>
+
+    <enclosure
+      url="https://github.com/tphuc/rewritematemac-updater/releases/download/v1.0.4/RewriteMateMac.dmg"
+      length="10999114"
+      type="application/octet-stream"
+      sparkle:edSignature="mARRYmO55E/ep4wGgvf3jiCK3bb3AKusdnpJGvQGcQknhOkWuL8UcBbvNSCAcJrk2G9eM+a8Ic04N8LrfA+HDg=="
+    />
+
+    <description><![CDATA[
+      - Improvements
+      - Bug fixes
+    ]]></description>
+  </item>
 </channel>
 </rss>
