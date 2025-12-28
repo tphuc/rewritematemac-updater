@@ -5,7 +5,7 @@ set -e
 APP_NAME="RewriteMateMac.app"
 APP_PATH="$HOME/Documents/RewriteMate/RewriteMateMac.app"
 UPDATER_DIR="$HOME/Documents/RewriteMate/rewritematemac-updater"
-ZIP_NAME="RewriteMateMac.zip"
+DMG_NAME="RewriteMateMac.dmg"          # Changed from ZIP_NAME
 APPCAST="appcast.xml"
 
 SPARKLE_BIN="$HOME/Library/Developer/Xcode/DerivedData/RewriteMateMac-bgbdnfzaosjqudcupgcykynqpgoh/SourcePackages/artifacts/sparkle/Sparkle/bin/sign_update"
@@ -26,23 +26,33 @@ echo "🚀 Releasing RewriteMate $VERSION ($BUILD_NUMBER)"
 
 cd "$UPDATER_DIR"
 
-# ---------- ZIP ----------
-echo "📦 Zipping app..."
-rm -f "$ZIP_NAME"
-ditto -c -k --keepParent "$APP_PATH" "$ZIP_NAME"
+# ---------- CREATE TEMP FOLDER FOR DMG CONTENTS ----------
+echo "🗂️ Preparing DMG contents..."
+TEMP_DIR=$(mktemp -d)
+cp -R "$APP_PATH" "$TEMP_DIR/"
+ln -s /Applications "$TEMP_DIR/Applications"   # Optional: nice drag-to-install shortcut
 
-FILE_SIZE=$(stat -f%z "$ZIP_NAME")
+# ---------- CREATE DMG ----------
+echo "📦 Creating DMG..."
+rm -f "$DMG_NAME"
+hdiutil create -srcfolder "$TEMP_DIR" -volname "RewriteMate $VERSION" \
+  -fs HFS+ -format UDZO "$DMG_NAME"
+
+# Clean up temp folder
+rm -rf "$TEMP_DIR"
+
+FILE_SIZE=$(stat -f%z "$DMG_NAME")
 
 # ---------- GITHUB RELEASE ----------
-echo "🚀 Uploading ZIP to GitHub Release..."
-gh release create "v$VERSION" "$ZIP_NAME" \
+echo "🚀 Uploading DMG to GitHub Release..."
+gh release create "v$VERSION" "$DMG_NAME" \
   --title "RewriteMate $VERSION" \
   --notes "Improvements and bug fixes" \
-  || gh release upload "v$VERSION" "$ZIP_NAME" --clobber
+  || gh release upload "v$VERSION" "$DMG_NAME" --clobber
 
 # ---------- SPARKLE SIGN ----------
 echo "🔐 Generating Sparkle signature..."
-SIGN_OUTPUT=$("$SPARKLE_BIN" "$ZIP_NAME")
+SIGN_OUTPUT=$("$SPARKLE_BIN" "$DMG_NAME")
 ED_SIGNATURE=$(echo "$SIGN_OUTPUT" | sed -n 's/.*sparkle:edSignature="\([^"]*\)".*/\1/p')
 
 # ---------- XML ITEM ----------
@@ -54,7 +64,7 @@ ITEM=$(cat <<EOF
     <sparkle:shortVersionString>$VERSION</sparkle:shortVersionString>
 
     <enclosure
-      url="$GITHUB_BASE_URL/v$VERSION/$ZIP_NAME"
+      url="$GITHUB_BASE_URL/v$VERSION/$DMG_NAME"
       length="$FILE_SIZE"
       type="application/octet-stream"
       sparkle:edSignature="$ED_SIGNATURE"
@@ -78,4 +88,4 @@ git add "$APPCAST"
 git commit -m "Release v$VERSION"
 git push
 
-echo "✅ Release v$VERSION completed successfully"
+echo "✅ Release v$VERSION (DMG) completed successfully"
