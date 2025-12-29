@@ -2,5 +2,20 @@
      xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle">
 
 <channel>
+      <item>
+    <title>Version 1.0.4</title>
+    <sparkle:version>104</sparkle:version>
+    <sparkle:shortVersionString>1.0.4</sparkle:shortVersionString>
+    <enclosure
+      url="https://github.com/tphuc/rewritematemac-updater/releases/download/v1.0.4/RewriteMateMac.dmg"
+      length="11031678"
+      type="application/octet-stream"
+      sparkle:edSignature="NsOigR6zbYtR+sUCxf+RVdPS+rYJmp/hSRzAbKjrNCW6LfWjIWUW+4Rp9KM5ckYs6ODd/ARx1BlBQGwxl3QcAw=="
+    />
+    <description><![CDATA[
+      - Improvements
+      - Bug fixes
+    ]]></description>
+  </item>
   <title>RewriteMate Updates</title>
 </rss>
