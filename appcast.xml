@@ -3,6 +3,21 @@
 
 <channel>
       <item>
+    <title>Version 1.0.5</title>
+    <sparkle:version>105</sparkle:version>
+    <sparkle:shortVersionString>1.0.5</sparkle:shortVersionString>
+    <enclosure
+      url="https://github.com/tphuc/rewritematemac-updater/releases/download/v1.0.5/RewriteMateMac.dmg"
+      length="4449384"
+      type="application/octet-stream"
+      sparkle:edSignature="CPxwoipnefVqCbPSTJ02xRE1r3JWtQ3kxS0TmsJYV8sfTF6GRVUt2wKvDBYswm/sLseh4IYHuY0PlWfk3B+YDA=="
+    />
+    <description><![CDATA[
+      - Improvements
+      - Bug fixes
+    ]]></description>
+  </item>
+      <item>
     <title>Version 1.0.4</title>
     <sparkle:version>104</sparkle:version>
     <sparkle:shortVersionString>1.0.4</sparkle:shortVersionString>
